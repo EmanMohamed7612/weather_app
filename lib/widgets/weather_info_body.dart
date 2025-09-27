@@ -41,13 +41,9 @@ class WeatherInfoBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Image.network(
-                //   weatherModel.image != null &&
-                //           weatherModel.image!.startsWith("http")
-                //       ? weatherModel.image!
-                //       : "https:${weatherModel.image}",
-                // ),
-                Image.asset('assets/images/cloudy.png'),
+                Image.asset(
+                  weatherModel.getImage(weatherModel.weatherCondition),
+                ),
                 Text(
                   weatherModel.temp.toString(),
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
